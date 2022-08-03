@@ -52,28 +52,42 @@
       var passwordLength = window.prompt("Select length between 8 and 128");
       console.log("password length " + passwordLength);
 
-      window.confirm("Would you like to use numbers?") 
-        if (numbers === true) {
-          var computerChoice = numbers[index];
+      confirmNumbers = confirm("Would you like to use numbers?") 
+        if (confirmNumbers === true) {
+          var computerChoice = numbers.index;
+        
+        console.log("Numbers have been selected " + numbers);
+        } else {
+          console.log("Numbers will not be used");
         }
-        console.log("numbers have been selected " + numbers);
+        
+
+      confirmSymbols = confirm("Would you like to use symbols?") 
+        if (confirmSymbols === true) {
+          var computerChoice = symbols.index;
+      
+      console.log("Symbols have been selected " + symbols);
+        } else {
+          console.log("Symbols will not be used");
+        }
 
 
-      window.confirm("Would you like to use symbols?") 
-        if (symbols === true) {
-          var computerChoice = symbols[index];
-      }
-      console.log("symbols have been selected " + symbols);
-
-      window.confirm("Would you like to use uppercase?") 
-      if (uppercase === true) {
-        var computerChoice = uppercase[index];
-      }
+      confirmUppercase = confirm("Would you like to use uppercase?") 
+      if (confirmUppercase === true) {
+        var computerChoice = uppercase.index;
+      
       console.log("uppercase have been selected " + uppercase);
-
-      window.confirm("Would you like to use lowercase?") 
-      if (lowercase === true) {
-        var computerChoice = lowercase[index];
+      } else {
+        console.log("Uppercase will not be used");
       }
-      console.log("lowercase have been selected " + lowercase);
+
+      confirmLowercase = confirm("Would you like to use lowercase?") 
+      if (confirmLowercase === true) {
+        var computerChoice = lowercase.index;
+      
+      console.log("Lowercase have been selected " + lowercase);
+    } else {
+      console.log("Lowercase will not be used");
     }
+
+  }
