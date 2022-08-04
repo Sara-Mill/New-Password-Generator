@@ -6,16 +6,14 @@
   var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-  var PasswordLength = password.length;
+  var PasswordLength = [""];
   // Turn numbers into a sting
   //var stringNumbers = numbers.tostring();
   var randomIndex = numbers.concat(symbols, lowercase, uppercase);
-  //const myString2 = randomIndex.toString();
-  //console.log(typeof myString2);
-  //console.log(randomIndex);
 
     console.log(randomIndex);
- 
+
+
 // Write password to the #password input
   function writePassword() {
     var password = generatePassword() 
@@ -32,10 +30,6 @@
   //}
   }
   
-
-  // Example of turning characters to random
- 
-
 
 
   
@@ -60,10 +54,12 @@
           return; 
         } 
 
+
         // User choice of input
       confirmNumbers = confirm("Would you like to use numbers?") 
         if (confirmNumbers === true) {
           var computerChoice = numbers.index;
+
         
         console.log("Numbers have been selected " + numbers);
         } else {
@@ -98,40 +94,44 @@
     } else {
       console.log("Lowercase will not be used");
     }
-     // Example of turning characters to random
-  function makeid(length) {
-    var result           ="";
-    var characters       = '!@#$%^&*(ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+      // Generates a random password in the console
+    function makeid(length) {
+    var result           = '';
+    var characters       = '!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
+    
     for ( var i = 0; i < length; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * 
-      userChoice));
+ userChoice));
    }
    return result;
 }
 
-console.log(makeid(userChoice));
+console.log("Your new password is " + makeid(userChoice));
 
+//if (confirmNumbers && confirmSymbols && confirmUppercase && confirmLowercase)
+    
 
     //var randomIndex = ("");
 // Loop the array elements and choose randomly
-    //  for (var i = 0; i <= characterLength; i++) {
-
+      //for (var i = 0; i <= userChoice; i++) {
+       // const myString2 = randomIndex.toString();
         //Not Working.  Only pulling 1 random character, not up to the length
         //Also not printing on screen, only printing to console.
-        //passwordText = myString2[Math.floor(Math.random() * characterLength)];
-       // passwordText = myString2[Math.floor(Math.random() * characterLength)];
-        //console.log(mySrting2 = [Math.floor(Math.random() * characterLength)]);
+        //passwordText = myString2[Math.floor(Math.random() * userChoice)];
+        //passwordText = (randomIndex[Math.floor(Math.random() * userChoice)]);
+        //console.log(mySrting2 = [Math.floor(Math.random() * userChoice)]);
 //}
 //console.log(passwordText);
 //Example changes numbers to strings
-const myNum2 = 123;
-const myString2 = randomIndex.toString();
-console.log(typeof myString2);
+//const myNum2 = 123;
+//const myString2 = randomIndex.toString();
+//console.log(typeof myString2);
 
 // Example changes strings to numbers
-const myString = '123';
-const myNum = Number(myString);
-console.log(typeof myNum);
+//const myString = '123';
+//const myNum = Number(myString);
+//console.log(typeof myNum);
 
 }
