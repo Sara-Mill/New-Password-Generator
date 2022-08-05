@@ -2,54 +2,41 @@
 
 //Arrays to choose from
   var numbers = ["1","2","3","4","5","6","7","8","9"];
-  var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(",")"];
+  var symbols = ["1","2","3","4","5","6","7","8","9"];
   var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-  var PasswordLength = [""];
+  var userChoiceLength = [];
   // Turn numbers into a sting
   //var stringNumbers = numbers.tostring();
   var randomIndex = numbers.concat(symbols, lowercase, uppercase);
 
     console.log(randomIndex);
 
-
-// Write password to the #password input
-  function writePassword() {
-    var password = generatePassword() 
-    var passwordText = document.querySelector("#password");
-  
-    passwordText.value = password;
-  
-  
-    //if (uppercase && lowercase && numbers && symbols) {
-      // Loop the array elements and choose randomly
-    //for (let i =0; i < length; i++) {
-    //var randomIndex = Math.floor(Math.random() * length);
-    //}
-  //}
-  }
-  
-
-
-  
+    function writePassword() {            
+      password = generatePassword(); 
+      var passwordText = document.querySelector("#password");
+    
+      passwordText.value = password
+            }  
+ 
+   
   // Get references to the #generate element
   var generateBtn = document.querySelector("#generate");
 
   
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
-  
     
     //When user clicks the button to generate password then presented with a series of prompts for
     // Window Prompts
     function generatePassword() {
 
-      var userChoice = window.prompt("Select length between 8 and 128");
-      console.log("password length " + userChoice);
+      var userChoiceLength = window.prompt("Select length between 8 and 128");
+      console.log("password length " + userChoiceLength);
 
       // If no number is entered, prompt user to enter a number  
-      if(userChoice < 8 || userChoice > 128) {
+      if(userChoiceLength < 8 || userChoiceLength > 128) {
           (window.alert("Please select between 8 and 128"));
           return; 
         } 
@@ -104,164 +91,125 @@
     // If all criteria are selected
     } else if (confirmNumbers && confirmSymbols && confirmLowercase && confirmUppercase) {
       userChoices = numbers.concat(symbols, lowercase, uppercase);
-      console.log(userChoices);
+      console.log("all " + userChoices);
      
-      
-      
-    
       //If no numbers are used:
     } else if (!confirmNumbers && confirmSymbols && confirmLowercase && confirmUppercase) {
       userChoices = uppercase.concat(symbols, lowercase);
-console.log(userChoices);
+      console.log( "symbols, lowercase, and uppercase " + userChoices);
     
     } else if (!confirmNumbers && !confirmSymbols && confirmLowercase && confirmUppercase) {
       userChoices = lowercase.concat(uppercase);
-console.log(userChoices);
+      console.log(" lowercase and uppercase " + userChoices);
 
     } else if (!confirmNumbers && !confirmSymbols && !confirmLowercase && confirmUppercase) {
       userChoices = uppercase;
-      
-console.log(userChoices);
+      console.log(" only uppercase " + userChoices);
 
     } else if(!confirmNumbers && confirmSymbols && !confirmLowercase && confirmUppercase) {
       userChoices = symbols.concat(uppercase);
-      window.alert("Your new password is " + userChoices);
-console.log(userChoices);
+      console.log("symbols and uppercase " + userChoices);
 
     } else if(!confirmNumbers && confirmSymbols && !confirmLowercase && !confirmUppercase) {
       userChoices = symbols;
-      window.alert("Your new password is " + userChoices);
-console.log(+ userChoices);
+      console.log("only symbols " + userChoices);
 
     }else if(!confirmNumbers && !confirmSymbols && confirmLowercase && !confirmUppercase) {
       userChoices = lowercase;
-      window.alert("Your new password is " + userChoices);
-console.log(+ userChoices);
+      console.log("only lowercase " + userChoices);
 
     } else if(!confirmNumbers && confirmSymbols && confirmLowercase && !confirmUppercase) {
       userChoices = symbols.concat(lowercase);
-      window.alert("Your new password is " + userChoices);
-console.log("choices: " + userChoices);
+      console.log("symbols and lowercase " + userChoices);
 
       // If no Symbols are used
 
     } else if (confirmNumbers && !confirmSymbols && !confirmLowercase && !confirmUppercase) {
-      userChoices = numbers.concat(symbols, lowercase, uppercase);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
+      userChoices = numbers;
+      console.log("numbers " + userChoices);
 
     } else if (confirmNumbers && !confirmSymbols && confirmLowercase && !confirmUppercase) {
       userChoices = numbers.concat(lowercase,);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
+      console.log("numbers and lowercase " + userChoices);
 
     } else if (confirmNumbers && !confirmSymbols && !confirmLowercase && confirmUppercase) {
       userChoices = numbers.concat(uppercase);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
+      console.log("numbers and uppercase " + userChoices);
 
     } else if (!confirmNumbers && !confirmSymbols && confirmLowercase && confirmUppercase) {
       userChoices = lowercase.concat(uppercase);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
+      console.log("lowercase and uppercase " + userChoices);
 
       // If no Lowercase is used
     } else if (confirmNumbers && confirmSymbols && !confirmLowercase && confirmUppercase) {
       userChoices = numbers.concat(symbols, uppercase);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
+      console.log("numbers, symbols, and uppercase " + userChoices);
 
     } else if (confirmNumbers && confirmSymbols && !confirmLowercase && !confirmUppercase) {
       userChoices = numbers.concat(symbols);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
+      console.log("numbers and symbols " + userChoices);
 
-    } else if (confirmNumbers && !confirmSymbols && !confirmLowercase && !confirmUppercase) {
-      userChoices = numbers;
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
-
-
-    } else if (!confirmNumbers && confirmSymbols && !confirmLowercase && confirmUppercase) {
-      userChoices = symbols.concat(uppercase);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
-
-    } else if (!confirmNumbers && confirmSymbols && !confirmLowercase && !confirmUppercase) {
-      userChoices = symbols;
-      window.alert("Your new password is " + userChoices);
-onsole.log("choices" + userChoices);
-
-    } else if (!confirmNumbers && !confirmSymbols && !confirmLowercase && confirmUppercase) {
-      userChoices = (uppercase);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
 
       // If no Uppercase is used
-    } else if (confirmNumbers && !confirmSymbols && !confirmLowercase && !confirmUppercase) {
-      userChoices = (numbers);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
-
-    } else if (confirmNumbers && confirmSymbols && !confirmLowercase && !confirmUppercase) {
-      userChoices = numbers.concat(symbols);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
-
+ 
     } else if (confirmNumbers && confirmSymbols && confirmLowercase && !confirmUppercase) {
       userChoices = numbers.concat(symbols, lowercase);
-      window.alert("Your new password is " + userChoices);
-console.log("choices" + userChoices);
-
-    } else if (confirmNumbers && !confirmSymbols && confirmLowercase && !confirmUppercase) {
-      userChoices = numbers.concat(lowercase);
-      window.alert("Your new password is " + userChoices);
-      console.log("choices" + userChoices);
-
-
-    } else if (!confirmNumbers && confirmSymbols && !confirmLowercase && !confirmUppercase) {
-      userChoices = symbols;
-      window.alert("Your new password is " + userChoices);
-      console.log("choices" + userChoices);
-
-    } else if (!confirmNumbers && !confirmSymbols && confirmLowercase && !confirmUppercase) {
-      userChoices = (lowercase);
-      window.alert("Your new password is " + userChoices);
-      console.log("choices" + userChoices);
-      criteria
-      for (var i =0; i <length; i++) {
-        var password = userChoices[Math.floor(Math.random() * userChoice)];
-            
-            for (var i =0; i <length; i++) {
-              var all = userChoices[Math.floor(Math.random() * userChoice)];
-            
-            }
-    
-            console.log(password);
-      
+      console.log("numbers, symbols, and lowercase " + userChoices);
     }
+  
+      //criteria
+   // for (var i =0; i <length; i++) {
+       // var password = userChoices[Math.floor(Math.random() * userChoice)];
+            
+   // for (var i =0; i <length; i++) {
+    //          var all = userChoices[Math.floor(Math.random() * userChoice)];
+            
+    
+    
+    //console.log(password);
+      
+    
 
-  }
+  //}
+writePassword
 
         // When all prompts are answered, then a password is generated that matches selected criteria
-    for (var i =0; i <length; i++) {
-      var password = userChoices[Math.floor(Math.random() * userChoice)];
-          
-          for (var i =0; i <length; i++) {
-            var all = userChoices[Math.floor(Math.random() * userChoice)];
-          
-          }
-  
-          console.log(password);
+  function writePassword() {
+    for (var i = 0; i < userChoiceLength; i++) {
+      var password = userChoices[Math.floor(Math.random() * userChoiceLength)];
+
+    for (var i=0; i < length; i++) {
+      var all = userChoices[Math.floor(Math.random() * userChoiceLength)];
+
+    }  
+      console.log(password);
+window.alert("Your new password is " + password);
+    }
+    
+          //console.log(password);
 
         //When the password is generated Then it is displayed in an alert
-        window.alert("Your new password is " + password);
-        }
+        window.alert("Your new password is " + all);
+
+      }
+    }
+        //console.log(password);
         //When the password is generated Then it is displayed in an alert
-      window.alert("Your new password is " + all);
+      //window.alert("Your new password is " + password);
       
-        var result = "";
-  }
+        //var result = "";
+  //}
+
+  // Write password to the #password input
+  
+    //if (uppercase && lowercase && numbers && symbols) {
+      // Loop the array elements and choose randomly
+    //for (let i =0; i < length; i++) {
+    //var randomIndex = Math.floor(Math.random() * length);
+    //}
+  //}
+  
+
       // Generates a random password in the console
   //function result (length) {
    // var result           = '';
