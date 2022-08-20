@@ -27,7 +27,6 @@
     function generatePassword() {
 
       var userChoiceLength = window.prompt("Select length between 8 and 128");
-      console.log("password length " + userChoiceLength);
 
       // If no number is entered, prompt user to enter a number  
       if(userChoiceLength < 8 || userChoiceLength > 128) {
