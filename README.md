@@ -9,7 +9,7 @@ User decides criteria of characters to use, and length between 8 and 128.
 
 The code accepts and validates user input. 
 
-1[Screenshot of random mix of characters within password generator box](assets/images/Screenshot%20password%20generator.png)
+![Screenshot of random mix of characters within password generator box](assets/images/Screenshot%20password%20generator.png)
 
 Thank you!
 
