@@ -1,4 +1,4 @@
-This is a code I refractored in order to make prompts which accept user's input : length, and character type: numbers, symbols, lowercase, and uppercase.
+This is a code I refractored in order to make prompts which accept user's input : length, and character type: numbers, symbols, lowercase, and uppercase.  You can find application live here => https://sara-mill.github.io/New-Password-Generator/
 
 UPDATE:  this code now functions as planned; generating and writing a random password generated based on user's input.
 
