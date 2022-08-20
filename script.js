@@ -23,8 +23,7 @@
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
     
-    //When user clicks the button to generate password then presented with a series of prompts for
-    // Window Prompts
+    //When user clicks the button to generate password then presented with a series of prompts
     function generatePassword() {
 
       var userChoiceLength = window.prompt("Select length between 8 and 128");
@@ -68,8 +67,7 @@
           };
           return str;
         };
-        console.log(random());
         return random();//return random must include() to function
       };
-     };
+    };
   writePassword
