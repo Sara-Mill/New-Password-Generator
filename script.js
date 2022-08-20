@@ -7,15 +7,14 @@
   var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"].join("");
 
   var possibleCharacters = [];
-  var possibleCharactersToString = possibleCharacters.toString();
   var userChoiceLength = [];
 
-    function writePassword() {            
+  function writePassword() {            
       password = generatePassword(); 
       var passwordText = document.querySelector("#password");
     
       passwordText.value = password
-  }  
+  };  
  
   // Get references to the #generate element
   var generateBtn = document.querySelector("#generate");
@@ -55,24 +54,22 @@
         possibleCharacters.push(lowercase)
       }
     // Accessing the criteria to generate the password
-    if(!confirmNumbers && !confirmSymbols && !confirmLowercase && !confirmUppercase) {
+      if(!confirmNumbers && !confirmSymbols && !confirmLowercase && !confirmUppercase) {
       window.alert("Please choose a criteria");
 
-    } else {
+      } else {
         const random = (length = userChoiceLength) => {
-          let chars = possibleCharacters.join();
+          let chars = possibleCharacters.join("");//use join("") instead of join() to eliminate commas from returned array
 
           let str = "";
 
           for (let i = 0; i < length; i ++) {
             str += chars.charAt(Math.floor(Math.random() * chars.length));
-            
-          }
+          };
           return str;
         };
         console.log(random());
-        }
-      }
-    
-  
-writePassword
+        return random();//return random must include() to function
+      };
+     };
+  writePassword
