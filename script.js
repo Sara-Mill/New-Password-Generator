@@ -59,14 +59,20 @@
       window.alert("Please choose a criteria");
 
     } else {
+        const random = (length = userChoiceLength) => {
+          let chars = possibleCharacters.join();
 
-        for (let i = 0; i < userChoiceLength; i++) {
-        var possibleCharactersToString = possibleCharacters.join("");
-        console.log(possibleCharactersToString)
+          let str = "";
 
-        var newPassword = possibleCharacters[Math.floor(Math.random() * userChoiceLength)];
-        console.log(newPassword)
+          for (let i = 0; i < length; i ++) {
+            str += chars.charAt(Math.floor(Math.random() * chars.length));
+            
+          }
+          return str;
+        };
+        console.log(random());
+        }
       }
-    }
-  }
+    
+  
 writePassword
